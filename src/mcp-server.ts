@@ -3,26 +3,23 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { DocumentService } from './services/DocumentService.js';
-import path from "path";
 import { z } from "zod";
 
-// 创建 MCP 服务器
+// Create the MCP server
 const server = new McpServer({
   name: "Word Document Tools MCP",
-  version: "1.0.0",
+  version: "1.0.18",
 });
 
 const docService = DocumentService.getInstance();
 
-// 注册工具
-server.tool(
-  "create_document",
-  {
-    filePath: z.string(),
-    title: z.string().optional(),
-    author: z.string().optional(),
-  },
-  async (params) => {
+// Register tools
+server.tool("create_document", {
+  filePath: z.string(),
+  title: z.string().optional(),
+  author: z.string().optional(),
+}, async (params) => {
+  try {
     const result = await docService.createDocument(params.filePath, {
       title: params.title,
       author: params.author,
@@ -36,8 +33,18 @@ server.tool(
       ],
       isError: !result.success,
     };
+  } catch (error: any) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: `创建文档失败: ${error.message}`,
+        },
+      ],
+      isError: true,
+    };
   }
-);
+});
 
 server.tool(
   "open_document",
@@ -207,8 +214,11 @@ server.tool(
   }
 );
 
-// 使用标准输入输出作为传输层
+// Use standard input/output as transport layer
 const transport = new StdioServerTransport();
-await server.connect(transport);
+server.connect(transport).catch(error => {
+  console.error("Failed to connect transport:", error);
+  process.exit(1);
+});
 
 console.log("Word Document Tools MCP 服务器已启动"); 

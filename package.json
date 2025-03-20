@@ -1,23 +1,18 @@
 {
   "name": "@puchunjie/doc-tools-mcp",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "Word 文档处理 MCP 服务器 - 基于 TypeScript 的文档处理工具",
   "main": "dist/mcp-server.js",
-  "types": "dist/mcp-server.d.ts",
   "bin": {
     "doc-tools-mcp": "dist/mcp-server.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "README_zh.md"
-  ],
   "scripts": {
+    "inspect": "tsc && npx @modelcontextprotocol/inspector node -- dist/mcp-server.js",
+    "inspect-live": "npx @modelcontextprotocol/inspector npx -- @puchunjie/doc-tools-mcp",
     "build": "tsc",
-    "start": "node dist/mcp-server.js",
-    "dev": "ts-node --esm src/mcp-server.ts",
+    "start": "tsc && node dist/mcp-server.js",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update": "npm run build && npm version patch && npm publish"
   },
   "keywords": [
     "mcp",
@@ -38,7 +33,7 @@
   },
   "homepage": "https://github.com/puchunjie/doc-tools-mcp#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.1",
+    "@modelcontextprotocol/sdk": "1.4.1",
     "docx": "^8.5.0",
     "express": "^4.18.2",
     "mammoth": "^1.6.0"
