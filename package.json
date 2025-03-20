@@ -5,6 +5,9 @@
   "type": "module",
   "main": "dist/mcp-server.js",
   "types": "dist/mcp-server.d.ts",
+  "bin": {
+    "doc-tools-mcp": "./dist/mcp-server.js"
+  },
   "files": [
     "dist",
     "README.md",

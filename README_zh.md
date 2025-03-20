@@ -77,15 +77,35 @@ npx @puchunjie/doc-tools-mcp
 
 ### Cursor 集成
 
-1. 打开 Cursor 设置
-2. 找到 "MCP Servers" 配置项
-3. 添加服务器地址：`http://localhost:8765`
-4. 保存配置
+1. 打开 Cursor 配置文件 `~/.cursor/mcp.json`
+2. 添加以下配置：
+```json
+{
+  "WordTools": {
+    "command": "npx",
+    "args": [
+      "@puchunjie/doc-tools-mcp"
+    ]
+  }
+}
+```
 
-现在你可以使用自然语言来操作 Word 文档，例如：
+或者使用本地开发版本：
+```json
+{
+  "WordTools": {
+    "command": "node",
+    "args": [
+      "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
+    ]
+  }
+}
+```
+
+配置完成后，你可以使用自然语言来操作 Word 文档：
 ```
 "创建一个名为 report.docx 的新文档"
-"在 report.docx 中添加标题'月度报告'"
+"在 report.docx 中添加标题 '月度报告'"
 "插入一个 4x3 的销售数据表格"
 ```
 

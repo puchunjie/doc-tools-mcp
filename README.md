@@ -79,12 +79,32 @@ The server provides the following MCP functions:
 
 ### Cursor
 
-1. Open Cursor settings
-2. Navigate to "MCP Servers" configuration
-3. Add the server URL: `http://localhost:8765`
-4. Save the configuration
+1. Open the Cursor configuration file `~/.cursor/mcp.json`
+2. Add the following configuration:
+```json
+{
+  "WordTools": {
+    "command": "npx",
+    "args": [
+      "@puchunjie/doc-tools-mcp"
+    ]
+  }
+}
+```
 
-You can now use natural language to manipulate Word documents:
+Or for local development version:
+```json
+{
+  "WordTools": {
+    "command": "node",
+    "args": [
+      "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
+    ]
+  }
+}
+```
+
+After configuration, you can use natural language to manipulate Word documents:
 ```
 "Create a new document named report.docx"
 "Add a heading 'Monthly Report' to report.docx"
