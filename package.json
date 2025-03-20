@@ -29,12 +29,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/doc-tools-mcp.git"
+    "url": "git+https://github.com/puchunjie/doc-tools-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/doc-tools-mcp/issues"
+    "url": "https://github.com/puchunjie/doc-tools-mcp/issues"
   },
-  "homepage": "https://github.com/your-username/doc-tools-mcp#readme",
+  "homepage": "https://github.com/puchunjie/doc-tools-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.6.1",
     "docx": "^8.5.0",
