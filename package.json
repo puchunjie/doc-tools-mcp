@@ -1,0 +1,50 @@
+{
+  "name": "@puchunjie/doc-tools-mcp",
+  "version": "1.0.3",
+  "description": "Word 文档处理 MCP 服务器 - 基于 TypeScript 的文档处理工具",
+  "type": "module",
+  "main": "dist/mcp-server.js",
+  "types": "dist/mcp-server.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "README_zh.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/mcp-server.js",
+    "dev": "ts-node --esm src/mcp-server.ts",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "word",
+    "docx",
+    "document",
+    "typescript",
+    "word-processing"
+  ],
+  "author": "puchunjie",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/doc-tools-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/doc-tools-mcp/issues"
+  },
+  "homepage": "https://github.com/your-username/doc-tools-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "docx": "^8.5.0",
+    "express": "^4.18.2",
+    "mammoth": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
