@@ -54,7 +54,7 @@ npx @puchunjie/doc-tools-mcp
    http://localhost:8765
    ```
 
-## MCP Functions
+## MCP Tools
 
 The server provides the following MCP functions:
 

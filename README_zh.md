@@ -52,7 +52,7 @@ npx @puchunjie/doc-tools-mcp
    http://localhost:8765
    ```
 
-## MCP 功能列表
+## MCP 工具列表
 
 服务器提供以下 MCP 功能：
 
