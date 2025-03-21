@@ -1,5 +1,9 @@
 # Word Tools MCP Server
 
+<a href="https://glama.ai/mcp/servers/q9e176vq7l">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
+</a>
+
 A Model Context Protocol (MCP) server that provides AI-powered Word document manipulation capabilities. This server implements the MCP protocol to enable AI applications to create, edit, and manage Word documents through natural language interactions.
 
 ## Features
@@ -132,7 +136,7 @@ npm install
 
 3. Start in development mode:
 ```bash
-npm run dev
+npm run start
 ```
 
 4. Build for production:
@@ -154,7 +158,7 @@ npm run build
 
 ## License
 
-ISC
+MIT
 
 ## Support
 
