@@ -1,6 +1,6 @@
 {
   "name": "@puchunjie/doc-tools-mcp",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Word 文档处理 MCP 服务器 - 基于 TypeScript 的文档处理工具",
   "main": "dist/mcp-server.js",
   "bin": {

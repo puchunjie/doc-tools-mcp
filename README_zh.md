@@ -85,11 +85,13 @@ npx @puchunjie/doc-tools-mcp
 2. 添加以下配置：
 ```json
 {
-  "WordTools": {
-    "command": "npx",
-    "args": [
-      "@puchunjie/doc-tools-mcp"
-    ]
+  "mcpServers": {
+    "doc-tools-mcp": {
+      "command": "npx",
+      "args": [
+        "@puchunjie/doc-tools-mcp"
+      ]
+    }
   }
 }
 ```
@@ -97,11 +99,13 @@ npx @puchunjie/doc-tools-mcp
 或者使用本地开发版本：
 ```json
 {
-  "WordTools": {
-    "command": "node",
-    "args": [
-      "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
-    ]
+  "mcpServers": {
+    "doc-tools-mcp": {
+      "command": "node",
+      "args": [
+        "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
+      ]
+    }
   }
 }
 ```

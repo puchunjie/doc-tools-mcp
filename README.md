@@ -87,23 +87,28 @@ The server provides the following MCP functions:
 2. Add the following configuration:
 ```json
 {
-  "WordTools": {
-    "command": "npx",
-    "args": [
-      "@puchunjie/doc-tools-mcp"
-    ]
+  "mcpServers": {
+    "doc-tools-mcp": {
+      "command": "npx",
+      "args": [
+        "@puchunjie/doc-tools-mcp"
+      ]
+    }
   }
 }
+
 ```
 
 Or for local development version:
 ```json
 {
-  "WordTools": {
-    "command": "node",
-    "args": [
-      "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
-    ]
+  "mcpServers": {
+    "doc-tools-mcp": {
+      "command": "node",
+      "args": [
+        "/path/to/your/doc-tools-mcp/dist/mcp-server.js"
+      ]
+    }
   }
 }
 ```
