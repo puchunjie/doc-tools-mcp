@@ -1,0 +1,18 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      port:
+        type: number
+        default: 8765
+        description: Port on which the MCP server runs
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => { return { command: 'node', args: ['dist/mcp-server.js'], env: { PORT: config.port ? config.port.toString() : '8765' } }; }
+  exampleConfig:
+    port: 8765

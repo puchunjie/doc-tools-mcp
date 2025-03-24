@@ -19,6 +19,15 @@ A Model Context Protocol (MCP) server that provides AI-powered Word document man
 
 ## Installation
 
+### Installing via Smithery
+
+To install Word Tools for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@puchunjie/doc-tools):
+
+```bash
+npx -y @smithery/cli install @puchunjie/doc-tools --client claude
+```
+
+### Manual Installation
 ```bash
 npx @puchunjie/doc-tools-mcp
 ```
