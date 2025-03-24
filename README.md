@@ -2,6 +2,12 @@
 
 A Model Context Protocol (MCP) server that provides AI-powered Word document manipulation capabilities. This server implements the MCP protocol to enable AI applications to create, edit, and manage Word documents through natural language interactions.
 
+[![smithery badge](https://smithery.ai/badge/@puchunjie/doc-tools)](https://smithery.ai/server/@puchunjie/doc-tools)
+
+<a href="https://glama.ai/mcp/servers/q9e176vq7l">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
+</a>
+
 ## Features
 
 - Full MCP protocol implementation
@@ -164,10 +170,3 @@ MIT
 ## Support
 
 If you encounter any issues or have suggestions for improvements, please submit an issue on our GitHub repository. 
-
-## Install
-<a href="https://glama.ai/mcp/servers/q9e176vq7l">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
-</a>
-
-[![smithery badge](https://smithery.ai/badge/@puchunjie/doc-tools)](https://smithery.ai/server/@puchunjie/doc-tools)

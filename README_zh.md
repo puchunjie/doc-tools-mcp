@@ -1,10 +1,12 @@
 # Word 文档处理 MCP 服务器
 
+这是一个基于 Model Context Protocol (MCP) 实现的 Word 文档处理服务器，提供 AI 驱动的文档操作能力。该服务器实现了 MCP 协议，使 AI 应用能够通过自然语言交互来创建、编辑和管理 Word 文档。
+
+[![smithery badge](https://smithery.ai/badge/@puchunjie/doc-tools)](https://smithery.ai/server/@puchunjie/doc-tools)
+
 <a href="https://glama.ai/mcp/servers/q9e176vq7l">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
 </a>
-
-这是一个基于 Model Context Protocol (MCP) 实现的 Word 文档处理服务器，提供 AI 驱动的文档操作能力。该服务器实现了 MCP 协议，使 AI 应用能够通过自然语言交互来创建、编辑和管理 Word 文档。
 
 ## 功能特性
 
@@ -165,10 +167,3 @@ MIT
 ## 支持
 
 如果你在使用过程中遇到任何问题或有改进建议，欢迎在我们的 GitHub 仓库提交 Issue。 
-
-## 安装统计
-<a href="https://glama.ai/mcp/servers/q9e176vq7l">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
-</a>
-
-[![smithery badge](https://smithery.ai/badge/@puchunjie/doc-tools)](https://smithery.ai/server/@puchunjie/doc-tools)
