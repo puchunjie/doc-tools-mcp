@@ -165,3 +165,10 @@ MIT
 ## 支持
 
 如果你在使用过程中遇到任何问题或有改进建议，欢迎在我们的 GitHub 仓库提交 Issue。 
+
+## 安装统计
+<a href="https://glama.ai/mcp/servers/q9e176vq7l">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/q9e176vq7l/badge" />
+</a>
+
+[![smithery badge](https://smithery.ai/badge/@puchunjie/doc-tools)](https://smithery.ai/server/@puchunjie/doc-tools)
