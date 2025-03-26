@@ -1,36 +1,38 @@
-# Use a Node.js image with version >=18
-FROM node:18-alpine AS builder
+FROM debian:bullseye-slim
 
-# Set the working directory inside the Docker container
+ENV DEBIAN_FRONTEND=noninteractive \
+    GLAMA_VERSION="0.2.0" \
+    PATH="/home/service-user/.local/bin:${PATH}"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    libssl-dev \
+    software-properties-common \
+    wget \
+    zlib1g-dev && \
+    groupadd -r service-user && \
+    useradd -u 1987 -r -m -g service-user service-user && \
+    mkdir -p /home/service-user/.local/bin /app && \
+    chown -R service-user:service-user /home/service-user /app && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y --no-install-recommends nodejs && \
+    npm install -g mcp-proxy@2.10.6 pnpm@9.15.5 bun@1.1.42 && \
+    curl -LsSf https://astral.sh/uv/install.sh | UV_INSTALL_DIR="/usr/local/bin" sh && \
+    uv python install 3.13 --default --preview && \
+    ln -s $(uv python find) /usr/local/bin/python && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+USER service-user
+
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json ./
+RUN git clone https://github.com/puchunjie/doc-tools-mcp . && \
+    git checkout 37d7d16cc9b516bf14b1c8a787fc0ca6f116b8d4 && \
+    npm install && \
+    npm run build
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code
-COPY . .
-
-# Build the application
-RUN npm run build
-
-# Use a smaller Node.js image to run the app
-FROM node:18-alpine
-
-# Set the working directory inside the Docker container
-WORKDIR /app
-
-# Copy built files from the builder
-COPY --from=builder /app/dist /app/dist
-COPY --from=builder /app/package.json /app/package-lock.json /app
-
-# Install only production dependencies
-RUN npm install --only=production
-
-# 暴露端口（如果需要的话）
-EXPOSE 3000
-
-# 启动服务
-CMD ["node", "dist/mcp-server.js"]
+# 修改启动命令，添加环境变量来控制日志输出
+CMD ["mcp-proxy", "node", "--no-warnings", "dist/mcp-server.js"]

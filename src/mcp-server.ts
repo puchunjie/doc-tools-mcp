@@ -221,4 +221,4 @@ server.connect(transport).catch(error => {
   process.exit(1);
 });
 
-console.log("Word Document Tools MCP 服务器已启动"); 
+console.log("Word Document Tools MCP Server is running..."); 
